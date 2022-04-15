@@ -167,20 +167,23 @@ function App() {
   return (
     <div className="App">
       <div className="Input">
-        <h1>Input Image</h1>
+        <h1>Image Colorization Webapp | Author : Shikhar Gupta</h1>
+        <h2>Input Image</h2>
+        <div className="Input-Image">
         <label htmlFor="demo-dropdown">Demo: </label>
         <select name="Select Image" id="demo-dropdown" value={selectedDropdownFile} onChange={handleDropdown}>
             <option value="">-- Select Demo File --</option>
             {demoDropdownFiles.map((file) => <option key={file} value={file}>{file}</option>)}
         </select>
+        </div>
+        <img src={inputImage} alt="" align="center"/>
         <form onSubmit={handleSubmit}>
-          {/* <img src={inputFileData} alt="input image" /> */}
           <input type="file" accept=".png" onChange={handleChange} />
           <button type="submit" disabled={buttonDisable}>{buttonText}</button>
         </form>
       </div>
       <div className="Output">
-        <h1>Result</h1>
+        <h2>Output Image</h2>
         <img src={outputFileData} alt="" />
       </div>
     </div>
